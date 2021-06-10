@@ -5,6 +5,7 @@ import PostContent from '../../../components/PostContent';
 import Meta from './Meta';
 
 export default function PostText({ post }) {
+  console.log("nois",post)
   const readTimeEstimateInMinutes = Math.ceil(post.content.split(' ').length / 150);
 
   return (
