@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import Button from '../../Button';
 
-export default function AddComment({ postId }) {
+export default function AddComment({ postId, getComments }) {
   const [name, setName] = useState('');
   const [content, setContent] = useState('');
 
@@ -18,10 +18,8 @@ export default function AddComment({ postId }) {
     const request = axios.post(`http://localhost:4001/posts/${postId}/comments`, body)
 
     request.then( response => {
-      console.log(response.data)
+      getComments()
     })
-
-    alert('No futuro isso vai adicionar o comentário :)');
 
     setName('');
     setContent('');

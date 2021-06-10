@@ -19,16 +19,10 @@ export default function PostShowPage() {
     const request = axios.get(`http://localhost:4001/posts/${postId}`)
     
     request.then( response => {
-      console.log("aqui",response)
+      console.log("aqui dentro do post",response.data)
       setPost(response.data)
     })
-    /*setPost({
-      id: 1,
-      title: 'Hello World',
-      coverUrl: 'https://miro.medium.com/max/1024/1*OohqW5DGh9CQS4hLY5FXzA.png',
-      contentPreview: 'Esta é a estrutura de um post esperado pelo front-end',
-      content: 'Este é o conteúdo do post, o que realmente vai aparecer na página do post...'
-    })*/
+
   }, [postId]);
 
   function onEditButtonClick() {
